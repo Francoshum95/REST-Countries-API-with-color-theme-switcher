@@ -33,7 +33,7 @@ const Navbar = ({
   onChangeDarkMode
 }: NavbarProps) => {
   return (
-    <nav className={`${isDarkMode ? 'bg-dark-bg' : 'bg-white'} h-[6rem] w-full shadow-md mobile:p-4 px-[5rem] py-4 animation-colors`}>
+    <nav className={`${isDarkMode ? 'bg-dark-elment' : 'bg-white'} h-[6rem] shadow-md main-container animation-colors`}>
       <ul className="flex justify-between items-center h-full w-full">
         <li>
           <Link href="/" className="text-2xl mobile:text-sm font-bold">
