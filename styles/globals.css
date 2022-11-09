@@ -3,4 +3,13 @@
 @tailwind utilities;
 
 
+@layer components {
+  .animation-colors{
+    @apply transition-colors duration-300 ease-in-out
+  }
+}
+
+
+
+
 

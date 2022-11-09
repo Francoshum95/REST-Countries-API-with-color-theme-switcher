@@ -11,7 +11,7 @@ module.exports = {
         nunito: ["Nunito Sans"],
       },
       screens: {
-        'mobile': "375px",
+        'mobile': {'max': '375px'},
         'desktop': "1440px"
       },
       colors: {
