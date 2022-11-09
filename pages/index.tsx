@@ -1,7 +1,19 @@
-import Head from 'next/head'
-import Layout from '../components/Layout'
+import Head from 'next/head';
+import Layout from '../components/Layout';
+import useCountry from '../hook/useCountry';
+import useSearch from '../hook/useSearch';
+
+import Search from '../components/Search';
 
 export default function Home() {
+  const {
+    isLoading,
+    countryData,
+    regionList
+  } = useCountry()
+
+  const {inputSearch, onChangeSearch} = useSearch();
+  
   return (
     <div className="">
       <Head>
@@ -10,8 +22,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <div>
-          hello world
+        <div className='mt-5 flex w-full justify-between'>
+          <Search/>
+
         </div>
       </Layout>
 
