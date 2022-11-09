@@ -16,7 +16,9 @@ const Layout = ({children}:Props) => {
         isDarkMode={isDarkMode}
         onChangeDarkMode={onChangeDarkMode}
       />
-      {children}
+      <div className="main-container">
+        {children}
+      </div>
     </div>
   )
   

@@ -7,6 +7,10 @@
   .animation-colors{
     @apply transition-colors duration-300 ease-in-out
   }
+
+  .main-container{
+    @apply mobile:p-5 px-[5rem] py-8 w-full
+  }
 }
 
 
