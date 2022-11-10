@@ -1,26 +1,71 @@
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { DarkModeCtx } from "../context/DarkModeContext";
 import Image from 'next/image'
 import { countryDataType } from "../hook/useCountry";
+import { inputSearchType } from "../hook/useSearch";
+import { selectCountryType } from "../hook/useFilter";
 
 type props = {
-  countryData: countryDataType
+  countryData: countryDataType,
+  inputSearch: inputSearchType,
+  selectCountry: selectCountryType
 }
 
 
+const getSelectedData = ({
+  countryData,
+  inputSearch,
+  selectCountry
+}:props) => {
 
+  if (countryData.length === 0){
+    return []
+  }
 
+  const cloneData:countryDataType = JSON.parse(JSON.stringify(countryData)); 
+  const inSearch = inputSearch.split(" ").join("");
+
+  return (
+    cloneData.filter(data => {
+      const byName = data.name.split(" ").join("");
+      if (inputSearch === '' && selectCountry === ''){
+        return data
+      } else if (inputSearch === '' && selectCountry){
+        if (selectCountry === data.region){
+          return data
+        }
+      } else if (selectCountry === '' && inputSearch){
+        if (byName.toLowerCase().includes(inSearch.toLocaleLowerCase())){
+          return data
+        }
+      } else {
+        if (byName.toLowerCase().includes(inSearch.toLocaleLowerCase())
+          && selectCountry === data.region
+        ){
+          return data
+        }
+      }
+    })
+  )
+};
 
 const Card = ({
-  countryData
+  countryData,
+  inputSearch,
+  selectCountry
 }:props) => {
   const [isDarkMode] = useContext(DarkModeCtx);
+  const selectedData = useMemo(() => getSelectedData({
+    countryData,
+    inputSearch,
+    selectCountry
+  }), [countryData, inputSearch, selectCountry]);
 
   return (
     <div className={`item-mt`}>
       <div className="grid gap-6 desktop:grid-cols-4 grid-cols-2 md:grid-cols-1 content-center">
         {
-          countryData.map(({name, flag, alpha3Code, population, region, capital}) => {
+          selectedData.map(({name, flag, alpha3Code, population, region, capital}) => {
             return (
             <div className={`
               ${isDarkMode ? "bg-dark-elment" : "bg-white"}

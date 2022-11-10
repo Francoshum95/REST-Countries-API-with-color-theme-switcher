@@ -48,8 +48,8 @@ export default function Home() {
         </div>
         <Card
           countryData={countryData}
-        
-        
+          inputSearch={inputSearch}
+          selectCountry={selectCountry}
         />
       </Layout>
 
