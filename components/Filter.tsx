@@ -25,8 +25,8 @@ const Filter = ({
   const [isDarkMode] = useContext(DarkModeCtx);
 
   return (
-    <div className={`${isDarkMode ? "bg-dark-elment" : "bg-white"} w-[250px]
-      rounded-md nav-item animation-colors select-none relative
+    <div className={`${isDarkMode ? "bg-dark-elment" : "bg-white"} h-[71px] md:w-[60%] md:item-mt desktop:w-[300px] w-[50%] max-w-[300px]
+      rounded-md nav-item animation-colors select-none relative 
     `} ref={containerRef}>
       <button className="w-full h-full border-none rounded leading-tight flex items-center justify-between"
         onClick={() => onClickMenu()}
@@ -38,7 +38,7 @@ const Filter = ({
           </svg>
         </span>
       </button>
-      <ul className={`${isMenuOpen ? 'z-3 visible opacity-100': 'z-0 invisible opacity-0'} w-full bg-inherit absolute 
+      <ul className={`${isMenuOpen ? 'z-10 visible opacity-100': 'z-0 invisible opacity-0'} w-full bg-inherit absolute 
         z-3 mt-4 rounded-md left-0 nav-item`}
         >
         {

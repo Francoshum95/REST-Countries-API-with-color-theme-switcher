@@ -12,6 +12,7 @@ module.exports = {
       },
       screens: {
         'mobile': {'max': '375px'},
+        'md': {'max': "768px"},
         'desktop': "1440px"
       },
       colors: {

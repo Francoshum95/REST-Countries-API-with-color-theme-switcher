@@ -36,7 +36,7 @@ const Navbar = ({
     <nav className={`${isDarkMode ? 'bg-dark-elment' : 'bg-white'} h-[6rem] shadow-md main-container animation-colors`}>
       <ul className="flex justify-between items-center h-full w-full">
         <li>
-          <Link href="/" className="text-2xl mobile:text-sm font-bold">
+          <Link href="/" className="desktop:text-2xl text-xl mobile:text-sm font-bold">
               Where in the world?
           </Link>
         </li>

@@ -14,7 +14,7 @@ const Search = ({
   const [isDarkMode] = useContext(DarkModeCtx);
   
   return (
-    <div className={`${isDarkMode ? "bg-dark-elment" : "bg-white"} w-[500px]
+    <div className={`${isDarkMode ? "bg-dark-elment" : "bg-white"} md:w-full w-[50%] max-w-[500px] desktop:w-[500px] 
       rounded-md nav-item animation-colors select-none`}>
       <div className="flex gap-4 items-center"> 
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
