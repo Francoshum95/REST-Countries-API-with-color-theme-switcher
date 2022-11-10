@@ -9,8 +9,22 @@
   }
 
   .main-container{
-    @apply mobile:p-5 px-[5rem] py-8 w-full
+    @apply md:p-5 px-[5rem] py-8 w-full
   }
+
+  .nav-item{
+    @apply shadow px-8 py-3
+  }
+
+  .item-mt{
+    @apply mt-9
+  }
+
+  .cursor-hover{
+    @apply hover:opacity-70 transition-opacity duration-300 ease-in-out cursor-pointer
+  }
+
+
 }
 
 

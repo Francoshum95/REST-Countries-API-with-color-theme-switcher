@@ -6,6 +6,7 @@ import useSearch from '../hook/useSearch';
 
 import Search from '../components/Search';
 import Filter from '../components/Filter';
+import Card from '../components/Card';
 
 export default function Home() {
   const {
@@ -30,7 +31,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <div className='mt-5 flex w-full justify-between'>
+        <div className='mt-5 flex w-full justify-between md:flex-col'>
           <Search
             inputSearch={inputSearch}
             onChangeSearch={onChangeSearch}
@@ -45,6 +46,11 @@ export default function Home() {
             onChangeSelectCountry={onChangeSelectCountry}
           />
         </div>
+        <Card
+          countryData={countryData}
+        
+        
+        />
       </Layout>
 
     </div>
