@@ -1,12 +1,12 @@
-import {use, useState} from 'react';
+import {useState} from 'react';
 
 export type inputSearchType = string;
-
+export type onChangeSearchType = (e:React.FormEvent<HTMLInputElement>) => void
 
 const useSearch = () => {
   const [inputSearch, setInputSearch] = useState<inputSearchType>("");
 
-  const onChangeSearch = (e:React.FormEvent<HTMLInputElement>) => {
+  const onChangeSearch: onChangeSearchType= (e) => {
     setInputSearch(e.currentTarget.value)
   };
 

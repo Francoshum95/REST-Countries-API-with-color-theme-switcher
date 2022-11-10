@@ -19,7 +19,8 @@ module.exports = {
         "dark-bg": "#202C37",
         "light-text": "#111517",
         "light-input": "#858585",
-        "light-bg": "#FAFAFA"
+        "light-bg": "#FAFAFA",
+        "inherit": 'inherit'
       }
     },
   },
