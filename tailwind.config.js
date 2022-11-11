@@ -16,7 +16,7 @@ module.exports = {
         'desktop': "1440px"
       },
       colors: {
-        "dark-elment": "#003A70",
+        "dark-elment": "#2B3945",
         "dark-bg": "#202C37",
         "light-text": "#111517",
         "light-input": "#858585",
