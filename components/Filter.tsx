@@ -1,11 +1,10 @@
 import { useContext } from "react";
 import { DarkModeCtx } from "../context/DarkModeContext";
 import type { isMenuOpenType, selectCountryType, onChangeSelectCountryType, containerRefType, onClickMenuType} from "../hook/useFilter";
-import type { isLoadingType, regionListType} from '../hook/useCountry';
+import type { regionListType} from '../hook/useCountry';
 
 type props = {
   isMenuOpen:isMenuOpenType, 
-  isLoading: isLoadingType,
   containerRef: containerRefType,
   regionList: regionListType,
   selectCountry: selectCountryType
@@ -15,7 +14,6 @@ type props = {
 
 const Filter = ({
   isMenuOpen,
-  isLoading,
   containerRef,
   regionList,
   selectCountry,

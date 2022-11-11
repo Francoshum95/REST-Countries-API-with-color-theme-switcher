@@ -1,12 +1,13 @@
 import { useContext, useMemo } from "react";
+import { useRouter } from 'next/router'
 import { DarkModeCtx } from "../context/DarkModeContext";
 import Image from 'next/image'
-import { countryDataType } from "../hook/useCountry";
+import { CountriesDataType } from "../hook/useCountry";
 import { inputSearchType } from "../hook/useSearch";
 import { selectCountryType } from "../hook/useFilter";
 
 type props = {
-  countryData: countryDataType,
+  countryData: CountriesDataType,
   inputSearch: inputSearchType,
   selectCountry: selectCountryType
 }
@@ -22,7 +23,7 @@ const getSelectedData = ({
     return []
   }
 
-  const cloneData:countryDataType = JSON.parse(JSON.stringify(countryData)); 
+  const cloneData:CountriesDataType = JSON.parse(JSON.stringify(countryData)); 
   const inSearch = inputSearch.split(" ").join("");
 
   return (
@@ -60,6 +61,7 @@ const Card = ({
     inputSearch,
     selectCountry
   }), [countryData, inputSearch, selectCountry]);
+  const router = useRouter() 
 
   return (
     <div className={`item-mt`}>
@@ -70,7 +72,10 @@ const Card = ({
             <div className={`
               ${isDarkMode ? "bg-dark-elment" : "bg-white"}
               max-w-[25rem] rounded shadow-lg w-full cursor-hover`} key={alpha3Code}
-              onClick={() => {}}
+              onClick={(e) => {
+                e.preventDefault()
+                router.push(`/country/${alpha3Code.toLocaleLowerCase()}`)
+              }}
             > 
               <div className='overflow-hidden h-[18rem] relative'>
                 <Image

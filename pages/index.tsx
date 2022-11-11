@@ -10,7 +10,6 @@ import Card from '../components/Card';
 
 export default function Home() {
   const {
-    isLoading,
     countryData,
     regionList
   } = useCountry()
@@ -39,7 +38,6 @@ export default function Home() {
           <Filter
             isMenuOpen={isMenuOpen}
             containerRef={containerRef}
-            isLoading={isLoading}
             regionList={regionList}
             selectCountry={selectCountry}
             onClickMenu={onClickMenu}
