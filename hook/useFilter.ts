@@ -11,8 +11,6 @@ const useFilter = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<isMenuOpenType>(false);
   const containerRef = useRef<containerRefType>(null); 
 
-  console.log(selectCountry)
-
   useEffect(() => {
     const handleClickOutside = (event:any) => {
       if (containerRef !== null){
